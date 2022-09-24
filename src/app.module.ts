@@ -29,7 +29,6 @@ import { PaymentModule } from './public/payment/payment.module';
 
 
 import { entities } from './constants/const.entities';
-import { PizdaEbatModule } from './pizda-ebat/pizda-ebat.module';
 // В теории было бы лучше тоже вынести в константы
 const {
   PORT_DB,
@@ -55,7 +54,7 @@ const {
    DepartmentModule, GroupModule, FileModule, FileInformationModule, 
    PublicInfoModule, TestResultsModule, TestModule, ActiveTestModule, 
    TestTypeModule, QuestionModule, QuestionResultModule, 
-   QuestionTypeModule, InputTypeModule, PizdaEbatModule],
+   QuestionTypeModule, InputTypeModule],
   controllers: [AppController],
   providers: [AppService],
 })
