@@ -13,6 +13,7 @@ const course_results_controller_1 = require("./course-results.controller");
 let CourseResultsModule = class CourseResultsModule {
 };
 CourseResultsModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [course_results_controller_1.CourseResultsController],
         providers: [course_results_service_1.CourseResultsService]

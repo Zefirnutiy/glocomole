@@ -13,6 +13,7 @@ const file_controller_1 = require("./file.controller");
 let FileModule = class FileModule {
 };
 FileModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [file_controller_1.FileController],
         providers: [file_service_1.FileService]

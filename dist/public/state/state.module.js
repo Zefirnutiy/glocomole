@@ -13,6 +13,7 @@ const state_controller_1 = require("./state.controller");
 let StateModule = class StateModule {
 };
 StateModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [state_controller_1.StateController],
         providers: [state_service_1.StateService]

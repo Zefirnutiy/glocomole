@@ -13,6 +13,7 @@ const course_controller_1 = require("./course.controller");
 let CourseModule = class CourseModule {
 };
 CourseModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [course_controller_1.CourseController],
         providers: [course_service_1.CourseService]

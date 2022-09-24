@@ -13,6 +13,7 @@ const dead_line_controller_1 = require("./dead-line.controller");
 let DeadLineModule = class DeadLineModule {
 };
 DeadLineModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [dead_line_controller_1.DeadLineController],
         providers: [dead_line_service_1.DeadLineService]

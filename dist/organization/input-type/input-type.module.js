@@ -13,6 +13,7 @@ const input_type_controller_1 = require("./input-type.controller");
 let InputTypeModule = class InputTypeModule {
 };
 InputTypeModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [input_type_controller_1.InputTypeController],
         providers: [input_type_service_1.InputTypeService]

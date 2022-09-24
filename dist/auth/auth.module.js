@@ -14,6 +14,7 @@ const jwt_1 = require("@nestjs/jwt");
 let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         imports: [jwt_1.JwtModule.register({
                 secret: "lkdjfgbkdjfg",

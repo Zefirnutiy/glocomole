@@ -13,6 +13,7 @@ const active_course_controller_1 = require("./active-course.controller");
 let ActiveCourseModule = class ActiveCourseModule {
 };
 ActiveCourseModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [active_course_controller_1.ActiveCourseController],
         providers: [active_course_service_1.ActiveCourseService]

@@ -13,6 +13,7 @@ const public_info_controller_1 = require("./public-info.controller");
 let PublicInfoModule = class PublicInfoModule {
 };
 PublicInfoModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [public_info_controller_1.PublicInfoController],
         providers: [public_info_service_1.PublicInfoService]

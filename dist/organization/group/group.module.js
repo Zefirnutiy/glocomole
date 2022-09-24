@@ -13,6 +13,7 @@ const group_controller_1 = require("./group.controller");
 let GroupModule = class GroupModule {
 };
 GroupModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [group_controller_1.GroupController],
         providers: [group_service_1.GroupService]

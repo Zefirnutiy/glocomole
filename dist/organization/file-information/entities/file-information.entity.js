@@ -14,6 +14,10 @@ const typeorm_1 = require("typeorm");
 let FileInformation = class FileInformation {
 };
 __decorate([
+    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    __metadata("design:type", Number)
+], FileInformation.prototype, "id", void 0);
+__decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", Number)
 ], FileInformation.prototype, "clientId", void 0);

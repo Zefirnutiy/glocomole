@@ -13,6 +13,7 @@ const test_results_controller_1 = require("./test-results.controller");
 let TestResultsModule = class TestResultsModule {
 };
 TestResultsModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [test_results_controller_1.TestResultsController],
         providers: [test_results_service_1.TestResultsService]

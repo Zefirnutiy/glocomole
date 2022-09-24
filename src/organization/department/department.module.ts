@@ -1,7 +1,8 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { DepartmentService } from './department.service';
 import { DepartmentController } from './department.controller';
 
+@Global()
 @Module({
   controllers: [DepartmentController],
   providers: [DepartmentService]

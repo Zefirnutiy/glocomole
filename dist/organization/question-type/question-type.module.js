@@ -13,6 +13,7 @@ const question_type_controller_1 = require("./question-type.controller");
 let QuestionTypeModule = class QuestionTypeModule {
 };
 QuestionTypeModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [question_type_controller_1.QuestionTypeController],
         providers: [question_type_service_1.QuestionTypeService]

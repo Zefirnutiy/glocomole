@@ -13,6 +13,7 @@ const payment_controller_1 = require("./payment.controller");
 let PaymentModule = class PaymentModule {
 };
 PaymentModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [payment_controller_1.PaymentController],
         providers: [payment_service_1.PaymentService]

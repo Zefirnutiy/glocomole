@@ -13,6 +13,7 @@ const department_controller_1 = require("./department.controller");
 let DepartmentModule = class DepartmentModule {
 };
 DepartmentModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [department_controller_1.DepartmentController],
         providers: [department_service_1.DepartmentService]

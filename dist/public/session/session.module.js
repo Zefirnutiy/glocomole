@@ -13,6 +13,7 @@ const session_controller_1 = require("./session.controller");
 let SessionModule = class SessionModule {
 };
 SessionModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [session_controller_1.SessionController],
         providers: [session_service_1.SessionService]

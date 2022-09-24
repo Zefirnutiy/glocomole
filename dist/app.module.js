@@ -12,7 +12,6 @@ const typeorm_1 = require("@nestjs/typeorm");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const auth_module_1 = require("./auth/auth.module");
-const organization_entity_1 = require("./public/organization/entities/organization.entity");
 const organization_module_1 = require("./public/organization/organization.module");
 const theme_module_1 = require("./public/theme/theme.module");
 const dead_line_module_1 = require("./public/dead-line/dead-line.module");
@@ -36,27 +35,8 @@ const question_result_module_1 = require("./organization/question-result/questio
 const question_type_module_1 = require("./organization/question-type/question-type.module");
 const input_type_module_1 = require("./organization/input-type/input-type.module");
 const payment_module_1 = require("./public/payment/payment.module");
-const theme_entity_1 = require("./public/theme/entities/theme.entity");
-const payment_entity_1 = require("./public/payment/entities/payment.entity");
-const dead_line_entity_1 = require("./public/dead-line/entities/dead-line.entity");
-const session_entity_1 = require("./public/session/entities/session.entity");
-const state_entity_1 = require("./public/state/entities/state.entity");
-const client_entity_1 = require("./organization/client/entities/client.entity");
-const course_entity_1 = require("./organization/course/entities/course.entity");
-const active_test_entity_1 = require("./organization/active-test/entities/active-test.entity");
-const active_course_entity_1 = require("./organization/active-course/entities/active-course.entity");
-const department_entity_1 = require("./organization/department/entities/department.entity");
-const group_entity_1 = require("./organization/group/entities/group.entity");
-const file_entity_1 = require("./organization/file/entities/file.entity");
-const file_information_entity_1 = require("./organization/file-information/entities/file-information.entity");
-const public_info_entity_1 = require("./organization/public-info/entities/public-info.entity");
-const test_result_entity_1 = require("./organization/test-results/entities/test-result.entity");
-const test_entity_1 = require("./organization/test/entities/test.entity");
-const test_type_entity_1 = require("./organization/test-type/entities/test-type.entity");
-const question_entity_1 = require("./organization/question/entities/question.entity");
-const question_result_entity_1 = require("./organization/question-result/entities/question-result.entity");
-const question_type_entity_1 = require("./organization/question-type/entities/question-type.entity");
-const input_type_entity_1 = require("./organization/input-type/entities/input-type.entity");
+const const_entities_1 = require("./constants/const.entities");
+const { PORT_DB, USERNAME_DB, PASSWORD_DB, DATABASE_NAME, } = process.env;
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -64,15 +44,11 @@ AppModule = __decorate([
         imports: [auth_module_1.AuthModule, typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
                 host: 'localhost',
-                port: 5432,
-                username: 'postgres',
-                password: 'postgres',
-                database: 'sweet_potato_db',
-                entities: [organization_entity_1.Organization, theme_entity_1.Theme, payment_entity_1.Payment, dead_line_entity_1.DeadLine, session_entity_1.Session,
-                    state_entity_1.State, client_entity_1.Client, course_entity_1.Course, active_test_entity_1.ActiveTest, active_course_entity_1.ActiveCourse,
-                    department_entity_1.Department, group_entity_1.Group, file_entity_1.File, file_information_entity_1.FileInformation, public_info_entity_1.PublicInfo, test_entity_1.Test,
-                    test_result_entity_1.TestResult, test_type_entity_1.TestType, question_entity_1.Question, question_result_entity_1.QuestionResult,
-                    question_type_entity_1.QuestionType, input_type_entity_1.InputType],
+                port: Number(PORT_DB),
+                username: USERNAME_DB,
+                password: PASSWORD_DB,
+                database: DATABASE_NAME,
+                entities: const_entities_1.entities,
                 synchronize: true,
             }), organization_module_1.OrganizationModule, theme_module_1.ThemeModule, payment_module_1.PaymentModule,
             dead_line_module_1.DeadLineModule, session_module_1.SessionModule, state_module_1.StateModule, client_module_1.ClientModule,

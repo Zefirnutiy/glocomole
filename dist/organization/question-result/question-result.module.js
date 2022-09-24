@@ -13,6 +13,7 @@ const question_result_controller_1 = require("./question-result.controller");
 let QuestionResultModule = class QuestionResultModule {
 };
 QuestionResultModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [question_result_controller_1.QuestionResultController],
         providers: [question_result_service_1.QuestionResultService]

@@ -13,6 +13,7 @@ const file_information_controller_1 = require("./file-information.controller");
 let FileInformationModule = class FileInformationModule {
 };
 FileInformationModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [file_information_controller_1.FileInformationController],
         providers: [file_information_service_1.FileInformationService]

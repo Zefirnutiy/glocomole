@@ -13,6 +13,7 @@ const theme_controller_1 = require("./theme.controller");
 let ThemeModule = class ThemeModule {
 };
 ThemeModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [theme_controller_1.ThemeController],
         providers: [theme_service_1.ThemeService]

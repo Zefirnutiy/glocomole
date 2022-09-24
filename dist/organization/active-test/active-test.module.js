@@ -13,6 +13,7 @@ const active_test_controller_1 = require("./active-test.controller");
 let ActiveTestModule = class ActiveTestModule {
 };
 ActiveTestModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         controllers: [active_test_controller_1.ActiveTestController],
         providers: [active_test_service_1.ActiveTestService]
