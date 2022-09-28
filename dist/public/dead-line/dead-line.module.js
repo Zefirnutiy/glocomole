@@ -10,12 +10,15 @@ exports.DeadLineModule = void 0;
 const common_1 = require("@nestjs/common");
 const dead_line_service_1 = require("./dead-line.service");
 const dead_line_controller_1 = require("./dead-line.controller");
+const typeorm_1 = require("@nestjs/typeorm");
+const dead_line_entity_1 = require("./entities/dead-line.entity");
 let DeadLineModule = class DeadLineModule {
 };
 DeadLineModule = __decorate([
     (0, common_1.Module)({
         controllers: [dead_line_controller_1.DeadLineController],
-        providers: [dead_line_service_1.DeadLineService]
+        providers: [dead_line_service_1.DeadLineService],
+        imports: [typeorm_1.TypeOrmModule.forFeature([dead_line_entity_1.DeadLine])],
     })
 ], DeadLineModule);
 exports.DeadLineModule = DeadLineModule;

@@ -10,12 +10,15 @@ exports.ThemeModule = void 0;
 const common_1 = require("@nestjs/common");
 const theme_service_1 = require("./theme.service");
 const theme_controller_1 = require("./theme.controller");
+const typeorm_1 = require("@nestjs/typeorm");
+const theme_entity_1 = require("./entities/theme.entity");
 let ThemeModule = class ThemeModule {
 };
 ThemeModule = __decorate([
     (0, common_1.Module)({
         controllers: [theme_controller_1.ThemeController],
-        providers: [theme_service_1.ThemeService]
+        providers: [theme_service_1.ThemeService],
+        imports: [typeorm_1.TypeOrmModule.forFeature([theme_entity_1.Theme])]
     })
 ], ThemeModule);
 exports.ThemeModule = ThemeModule;

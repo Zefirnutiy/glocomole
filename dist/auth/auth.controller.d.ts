@@ -3,5 +3,5 @@ import { CreateAuthDto } from './dto/create-auth.dto';
 export declare class AuthController {
     private readonly authService;
     constructor(authService: AuthService);
-    create(createAuthDto: CreateAuthDto): string;
+    register(createAuthDto: CreateAuthDto): string;
 }

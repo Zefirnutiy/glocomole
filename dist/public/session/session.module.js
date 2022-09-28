@@ -10,12 +10,15 @@ exports.SessionModule = void 0;
 const common_1 = require("@nestjs/common");
 const session_service_1 = require("./session.service");
 const session_controller_1 = require("./session.controller");
+const typeorm_1 = require("@nestjs/typeorm");
+const session_entity_1 = require("./entities/session.entity");
 let SessionModule = class SessionModule {
 };
 SessionModule = __decorate([
     (0, common_1.Module)({
         controllers: [session_controller_1.SessionController],
-        providers: [session_service_1.SessionService]
+        providers: [session_service_1.SessionService],
+        imports: [typeorm_1.TypeOrmModule.forFeature([session_entity_1.Session])]
     })
 ], SessionModule);
 exports.SessionModule = SessionModule;

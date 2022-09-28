@@ -19,8 +19,11 @@ let AuthService = class AuthService {
             dick: "12sm"
         });
     }
-    create(createAuthDto) {
-        return `title - ${createAuthDto.title} with email - ${createAuthDto.email}`;
+    validateOrg(title, password, email) {
+        return true;
+    }
+    register(createAuthDto) {
+        return `fsadfsadfd ${createAuthDto.email}`;
     }
 };
 AuthService = __decorate([

@@ -15,14 +15,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrganizationController = void 0;
 const common_1 = require("@nestjs/common");
 const organization_service_1 = require("./organization.service");
-const create_organization_dto_1 = require("./dto/create-organization.dto");
 const update_organization_dto_1 = require("./dto/update-organization.dto");
 let OrganizationController = class OrganizationController {
     constructor(organizationService) {
         this.organizationService = organizationService;
-    }
-    create(createOrganizationDto) {
-        return this.organizationService.create(createOrganizationDto);
     }
     findAll() {
         return this.organizationService.findAll();
@@ -38,20 +34,13 @@ let OrganizationController = class OrganizationController {
     }
 };
 __decorate([
-    (0, common_1.Post)(),
-    __param(0, (0, common_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_organization_dto_1.CreateOrganizationDto]),
-    __metadata("design:returntype", void 0)
-], OrganizationController.prototype, "create", null);
-__decorate([
-    (0, common_1.Get)(),
+    (0, common_1.Get)("/orgs"),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], OrganizationController.prototype, "findAll", null);
 __decorate([
-    (0, common_1.Get)(':id'),
+    (0, common_1.Get)('/orgs/:id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),

@@ -3,5 +3,6 @@ import { JwtService } from '@nestjs/jwt';
 export declare class AuthService {
     private jwtService;
     constructor(jwtService: JwtService);
-    create(createAuthDto: CreateAuthDto): string;
+    validateOrg(title: string, password: string, email: string): boolean;
+    register(createAuthDto: CreateAuthDto): string;
 }

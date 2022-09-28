@@ -11,6 +11,9 @@ const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const auth_controller_1 = require("./auth.controller");
 const jwt_1 = require("@nestjs/jwt");
+const organization_module_1 = require("../public/organization/organization.module");
+const passport_1 = require("@nestjs/passport");
+const local_strategy_1 = require("./strategy/local.strategy");
 let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([
@@ -20,9 +23,9 @@ AuthModule = __decorate([
                 signOptions: {
                     expiresIn: "12h"
                 }
-            })],
+            }), organization_module_1.OrganizationModule, passport_1.PassportModule],
         controllers: [auth_controller_1.AuthController],
-        providers: [auth_service_1.AuthService]
+        providers: [auth_service_1.AuthService, local_strategy_1.LocalStrategy]
     })
 ], AuthModule);
 exports.AuthModule = AuthModule;
