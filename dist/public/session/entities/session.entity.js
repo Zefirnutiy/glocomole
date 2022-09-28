@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Session = void 0;
+const state_entity_1 = require("../../state/entities/state.entity");
 const typeorm_1 = require("typeorm");
 let Session = class Session {
 };
@@ -34,8 +35,9 @@ __decorate([
     __metadata("design:type", Date)
 ], Session.prototype, "stateChangeDateTime", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.OneToOne)(() => state_entity_1.State),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", state_entity_1.State)
 ], Session.prototype, "stateId", void 0);
 Session = __decorate([
     (0, typeorm_1.Entity)()

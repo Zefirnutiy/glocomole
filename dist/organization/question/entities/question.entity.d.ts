@@ -1,3 +1,5 @@
+import { QuestionType } from "src/organization/question-type/entities/question-type.entity";
+import { Test } from "src/organization/test/entities/test.entity";
 export declare class Question {
     id: number;
     text: string;
@@ -8,7 +10,7 @@ export declare class Question {
     number: string;
     answerVariant: string;
     answerCorrect: string;
-    testId: number;
-    questionTypeId: number;
+    testId: Test;
+    questionTypeId: QuestionType;
     files: boolean;
 }

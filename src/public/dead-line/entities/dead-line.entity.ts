@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Organization } from "src/public/organization/entities/organization.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, JoinColumn } from "typeorm";
 
 @Entity()
 export class DeadLine {
@@ -12,6 +13,7 @@ export class DeadLine {
     @Column()
     Time: Date
     
-    @Column()
-    OrganizationId: number
+    @ManyToOne(() => Organization)
+    @JoinColumn()
+    OrganizationId: Organization
 }

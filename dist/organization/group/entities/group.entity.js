@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Group = void 0;
+const department_entity_1 = require("../../department/entities/department.entity");
 const typeorm_1 = require("typeorm");
 let Group = class Group {
 };
@@ -26,8 +27,9 @@ __decorate([
     __metadata("design:type", String)
 ], Group.prototype, "titleSingular", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.ManyToOne)(() => department_entity_1.Department),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", department_entity_1.Department)
 ], Group.prototype, "departmentId", void 0);
 Group = __decorate([
     (0, typeorm_1.Entity)()

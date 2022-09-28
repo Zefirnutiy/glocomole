@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Client } from "src/organization/client/entities/client.entity";
+import { Course } from "src/organization/course/entities/course.entity";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class ActiveCourse {
@@ -18,9 +20,11 @@ export class ActiveCourse {
     @Column()
     timeClose: Date
     
-    @Column()
-    courseId: number
+    @OneToOne(()=>Course)
+    @JoinColumn()
+    courseId: Course
     
-    @Column()
-    clientId: number
+    @OneToOne(()=>Client)
+    @JoinColumn()
+    clientId: Client
 }

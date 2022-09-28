@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Payment = void 0;
+const organization_entity_1 = require("../../organization/entities/organization.entity");
 const typeorm_1 = require("typeorm");
 let Payment = class Payment {
 };
@@ -42,8 +43,9 @@ __decorate([
     __metadata("design:type", Boolean)
 ], Payment.prototype, "protectionCheating", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.ManyToOne)(() => organization_entity_1.Organization),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", organization_entity_1.Organization)
 ], Payment.prototype, "organizationId", void 0);
 Payment = __decorate([
     (0, typeorm_1.Entity)()

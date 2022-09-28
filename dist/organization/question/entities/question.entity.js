@@ -10,6 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Question = void 0;
+const question_type_entity_1 = require("../../question-type/entities/question-type.entity");
+const test_entity_1 = require("../../test/entities/test.entity");
 const typeorm_1 = require("typeorm");
 let Question = class Question {
 };
@@ -50,12 +52,14 @@ __decorate([
     __metadata("design:type", String)
 ], Question.prototype, "answerCorrect", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.OneToOne)(() => test_entity_1.Test),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", test_entity_1.Test)
 ], Question.prototype, "testId", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.OneToOne)(() => question_type_entity_1.QuestionType),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", question_type_entity_1.QuestionType)
 ], Question.prototype, "questionTypeId", void 0);
 __decorate([
     (0, typeorm_1.Column)(),

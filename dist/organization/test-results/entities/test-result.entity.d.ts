@@ -1,3 +1,6 @@
+import { Client } from "src/organization/client/entities/client.entity";
+import { Course } from "src/organization/course/entities/course.entity";
+import { Test } from "src/organization/test/entities/test.entity";
 export declare class TestResult {
     id: number;
     passageTime: Date;
@@ -6,7 +9,7 @@ export declare class TestResult {
     attempts: number;
     date: Date;
     time: Date;
-    courseId: number;
-    testId: number;
-    clientId: number;
+    courseId: Course;
+    testId: Test;
+    clientId: Client;
 }

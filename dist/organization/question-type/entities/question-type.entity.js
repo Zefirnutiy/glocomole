@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.QuestionType = void 0;
+const input_type_entity_1 = require("../../input-type/entities/input-type.entity");
 const typeorm_1 = require("typeorm");
 let QuestionType = class QuestionType {
 };
@@ -22,7 +23,8 @@ __decorate([
     __metadata("design:type", String)
 ], QuestionType.prototype, "title", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.OneToOne)(() => input_type_entity_1.InputType),
+    (0, typeorm_1.JoinColumn)(),
     __metadata("design:type", Number)
 ], QuestionType.prototype, "inputTypeId", void 0);
 QuestionType = __decorate([

@@ -1,3 +1,5 @@
+import { Department } from "src/organization/department/entities/department.entity";
+import { Group } from "src/organization/group/entities/group.entity";
 export declare class Client {
     id: number;
     firstName: string;
@@ -12,7 +14,7 @@ export declare class Client {
     aploadFiles: boolean;
     viewYourResults: boolean;
     viewOtherResults: boolean;
-    departmentId: number;
-    groupId: number;
-    creatorId: number;
+    departmentId: Department;
+    groupId: Group;
+    creatorId: Client;
 }

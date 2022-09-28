@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { InputType } from "src/organization/input-type/entities/input-type.entity";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class QuestionType {
@@ -9,6 +10,7 @@ export class QuestionType {
     @Column()
     title:  string
     
-    @Column()
+    @OneToOne(()=>InputType)
+    @JoinColumn()
     inputTypeId:    number
 }

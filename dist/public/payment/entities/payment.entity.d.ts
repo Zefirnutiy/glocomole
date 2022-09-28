@@ -1,3 +1,4 @@
+import { Organization } from "src/public/organization/entities/organization.entity";
 export declare class Payment {
     number: number;
     money: number;
@@ -6,5 +7,5 @@ export declare class Payment {
     users: number;
     statistics: boolean;
     protectionCheating: boolean;
-    organizationId: number;
+    organizationId: Organization;
 }

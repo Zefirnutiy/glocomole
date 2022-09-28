@@ -8,10 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var Client_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Client = void 0;
+const department_entity_1 = require("../../department/entities/department.entity");
+const group_entity_1 = require("../../group/entities/group.entity");
 const typeorm_1 = require("typeorm");
-let Client = class Client {
+let Client = Client_1 = class Client {
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
@@ -66,18 +69,21 @@ __decorate([
     __metadata("design:type", Boolean)
 ], Client.prototype, "viewOtherResults", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.ManyToOne)(() => department_entity_1.Department),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", department_entity_1.Department)
 ], Client.prototype, "departmentId", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.ManyToOne)(() => group_entity_1.Group),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", group_entity_1.Group)
 ], Client.prototype, "groupId", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.OneToOne)(() => Client_1),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", Client)
 ], Client.prototype, "creatorId", void 0);
-Client = __decorate([
+Client = Client_1 = __decorate([
     (0, typeorm_1.Entity)()
 ], Client);
 exports.Client = Client;

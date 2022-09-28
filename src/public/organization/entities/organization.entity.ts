@@ -2,8 +2,11 @@ import {
     Entity,
     Column,
     PrimaryGeneratedColumn,
-    OneToMany,
+    OneToOne,
+    JoinColumn,
 } from 'typeorm'
+
+import { Theme } from 'src/public/theme/entities/theme.entity'
 
 @Entity()
 export class Organization {
@@ -41,6 +44,7 @@ export class Organization {
     @Column()
     time: Date
 
-    @Column()
-    themeId: number
+    @OneToOne(() => Theme)
+    @JoinColumn()
+    themeId: Theme
 }

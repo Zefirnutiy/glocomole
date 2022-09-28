@@ -1,4 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Client } from "src/organization/client/entities/client.entity";
+import { Course } from "src/organization/course/entities/course.entity";
+import { Test } from "src/organization/test/entities/test.entity";
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class TestResult {
@@ -24,12 +27,15 @@ export class TestResult {
     @Column()
     time:   Date
     
-    @Column()
-    courseId:   number
+    @OneToOne(()=>Course)
+    @JoinColumn()
+    courseId:   Course
     
-    @Column()
-    testId: number
+    @OneToOne(()=>Test)
+    @JoinColumn()
+    testId: Test
     
-    @Column()
-    clientId:   number
+    @OneToOne(()=>Client)
+    @JoinColumn()
+    clientId:  Client
 }

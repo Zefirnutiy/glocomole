@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeadLine = void 0;
+const organization_entity_1 = require("../../organization/entities/organization.entity");
 const typeorm_1 = require("typeorm");
 let DeadLine = class DeadLine {
 };
@@ -26,8 +27,9 @@ __decorate([
     __metadata("design:type", Date)
 ], DeadLine.prototype, "Time", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.ManyToOne)(() => organization_entity_1.Organization),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", organization_entity_1.Organization)
 ], DeadLine.prototype, "OrganizationId", void 0);
 DeadLine = __decorate([
     (0, typeorm_1.Entity)()

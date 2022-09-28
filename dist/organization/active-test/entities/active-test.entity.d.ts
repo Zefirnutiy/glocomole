@@ -1,3 +1,5 @@
+import { Client } from "src/organization/client/entities/client.entity";
+import { Test } from "src/organization/test/entities/test.entity";
 export declare class ActiveTest {
     id: number;
     date: Date;
@@ -6,6 +8,6 @@ export declare class ActiveTest {
     timeClose: Date;
     attempts: number;
     testTypeId: number;
-    testId: number;
-    clientId: number;
+    testId: Test;
+    clientId: Client[];
 }

@@ -10,6 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TestResult = void 0;
+const client_entity_1 = require("../../client/entities/client.entity");
+const course_entity_1 = require("../../course/entities/course.entity");
+const test_entity_1 = require("../../test/entities/test.entity");
 const typeorm_1 = require("typeorm");
 let TestResult = class TestResult {
 };
@@ -42,16 +45,19 @@ __decorate([
     __metadata("design:type", Date)
 ], TestResult.prototype, "time", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.OneToOne)(() => course_entity_1.Course),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", course_entity_1.Course)
 ], TestResult.prototype, "courseId", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.OneToOne)(() => test_entity_1.Test),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", test_entity_1.Test)
 ], TestResult.prototype, "testId", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.OneToOne)(() => client_entity_1.Client),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", client_entity_1.Client)
 ], TestResult.prototype, "clientId", void 0);
 TestResult = __decorate([
     (0, typeorm_1.Entity)()

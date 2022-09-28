@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Client } from "src/organization/client/entities/client.entity";
+import { Test } from "src/organization/test/entities/test.entity";
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class ActiveTest {
@@ -24,9 +26,11 @@ export class ActiveTest {
     @Column()
     testTypeId: number
     
-    @Column()
-    testId: number
+    @OneToOne(()=>Test)
+    @JoinColumn()
+    testId: Test
     
-    @Column()
-    clientId:   number
+    @ManyToOne(()=>Client)
+    @JoinColumn()
+    clientId: Client[]
 }

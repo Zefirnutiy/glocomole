@@ -10,6 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ActiveTest = void 0;
+const client_entity_1 = require("../../client/entities/client.entity");
+const test_entity_1 = require("../../test/entities/test.entity");
 const typeorm_1 = require("typeorm");
 let ActiveTest = class ActiveTest {
 };
@@ -42,12 +44,14 @@ __decorate([
     __metadata("design:type", Number)
 ], ActiveTest.prototype, "testTypeId", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.OneToOne)(() => test_entity_1.Test),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", test_entity_1.Test)
 ], ActiveTest.prototype, "testId", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.ManyToOne)(() => client_entity_1.Client),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", Array)
 ], ActiveTest.prototype, "clientId", void 0);
 ActiveTest = __decorate([
     (0, typeorm_1.Entity)()

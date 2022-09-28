@@ -1,4 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Client } from "src/organization/client/entities/client.entity";
+import { Question } from "src/organization/question/entities/question.entity";
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from "typeorm";
 
 @Entity()
 export class QuestionResult {
@@ -18,9 +20,11 @@ export class QuestionResult {
     @Column()
     scores: number
     
-    @Column()
-    questionId: number
+    @OneToOne(()=>Question)
+    @JoinColumn()
+    questionId: Question
     
-    @Column()
-    clientId:   number
+    @OneToOne(()=>Client)
+    @JoinColumn()
+    clientId:  Client
 }

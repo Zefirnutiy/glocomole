@@ -1,3 +1,4 @@
+import { Theme } from 'src/public/theme/entities/theme.entity';
 export declare class Organization {
     id: number;
     title: string;
@@ -10,5 +11,5 @@ export declare class Organization {
     protectionCh: boolean;
     date: Date;
     time: Date;
-    themeId: number;
+    themeId: Theme;
 }

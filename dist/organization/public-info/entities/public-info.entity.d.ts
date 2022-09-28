@@ -1,3 +1,4 @@
+import { Client } from "src/organization/client/entities/client.entity";
 export declare class PublicInfo {
     id: number;
     title: string;
@@ -7,5 +8,5 @@ export declare class PublicInfo {
     time: Date;
     dateDel: Date;
     timeDel: Date;
-    clientId: number;
+    clientId: Client;
 }

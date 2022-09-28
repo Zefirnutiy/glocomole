@@ -10,6 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ActiveCourse = void 0;
+const client_entity_1 = require("../../client/entities/client.entity");
+const course_entity_1 = require("../../course/entities/course.entity");
 const typeorm_1 = require("typeorm");
 let ActiveCourse = class ActiveCourse {
 };
@@ -34,12 +36,14 @@ __decorate([
     __metadata("design:type", Date)
 ], ActiveCourse.prototype, "timeClose", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.OneToOne)(() => course_entity_1.Course),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", course_entity_1.Course)
 ], ActiveCourse.prototype, "courseId", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.OneToOne)(() => client_entity_1.Client),
+    (0, typeorm_1.JoinColumn)(),
+    __metadata("design:type", client_entity_1.Client)
 ], ActiveCourse.prototype, "clientId", void 0);
 ActiveCourse = __decorate([
     (0, typeorm_1.Entity)()

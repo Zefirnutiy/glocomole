@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { State } from "src/public/state/entities/state.entity";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Session {
@@ -18,6 +19,7 @@ export class Session {
     @Column()
     stateChangeDateTime: Date
     
-    @Column()
-    stateId: number
+    @OneToOne(()=>State)
+    @JoinColumn()
+    stateId: State
 }

@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Department } from "src/organization/department/entities/department.entity";
+import { Group } from "src/organization/group/entities/group.entity";
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Client {
@@ -41,13 +43,16 @@ export class Client {
     
     @Column()
     viewOtherResults: boolean
-    
-    @Column()
-    departmentId: number
-    
-    @Column()
-    groupId: number
-    
-    @Column()
-    creatorId: number
+
+    @ManyToOne(()=>Department)
+    @JoinColumn()
+    departmentId: Department
+
+    @ManyToOne(()=>Group)
+    @JoinColumn()
+    groupId: Group
+
+    @OneToOne(()=>Client)
+    @JoinColumn()
+    creatorId: Client
 }
