@@ -1,7 +1,8 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { ActiveCourseService } from './active-course.service';
 import { ActiveCourseController } from './active-course.controller';
 
+@Global()
 @Module({
   controllers: [ActiveCourseController],
   providers: [ActiveCourseService]

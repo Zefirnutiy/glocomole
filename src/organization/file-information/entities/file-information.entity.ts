@@ -7,6 +7,12 @@ import { OneToOne, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn } from 
 
 @Entity()
 export class FileInformation {
+<<<<<<< HEAD
+    @PrimaryGeneratedColumn()
+    id: number
+    @Column()
+    clientId:   number
+=======
     
     @PrimaryGeneratedColumn()
     id: number
@@ -14,6 +20,7 @@ export class FileInformation {
     @OneToOne(()=>Client)
     @JoinColumn()
     clientId: Client
+>>>>>>> c40d4ec4383061476433efab7a035d08e4bef0ab
     
     @OneToOne(()=>File)
     @JoinColumn()
