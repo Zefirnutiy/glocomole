@@ -1,10 +1,13 @@
 import { Global, Module } from '@nestjs/common';
 import { ThemeService } from './theme.service';
 import { ThemeController } from './theme.controller';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Theme } from './entities/theme.entity';
 
 @Global()
 @Module({
   controllers: [ThemeController],
-  providers: [ThemeService]
+  providers: [ThemeService],
+  imports: [TypeOrmModule.forFeature([Theme])]
 })
 export class ThemeModule {}

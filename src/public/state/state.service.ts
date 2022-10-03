@@ -1,9 +1,13 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateStateDto } from './dto/create-state.dto';
 import { UpdateStateDto } from './dto/update-state.dto';
+import { State } from './entities/state.entity';
 
 @Injectable()
 export class StateService {
+  constructor(@InjectRepository(State) private readonly orgRepository: Repository<State>){}
   create(createStateDto: CreateStateDto) {
     return 'This action adds a new state';
   }

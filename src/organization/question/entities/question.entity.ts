@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { QuestionType } from "src/organization/question-type/entities/question-type.entity";
+import { Test } from "src/organization/test/entities/test.entity";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Question {
@@ -30,11 +32,13 @@ export class Question {
     @Column()
     answerCorrect: string
     
-    @Column()
-    testId: number
+    @OneToOne(()=>Test)
+    @JoinColumn()
+    testId: Test
     
-    @Column()
-    questionTypeId: number
+    @OneToOne(()=>QuestionType)
+    @JoinColumn()
+    questionTypeId: QuestionType
     
     @Column()
     files: boolean

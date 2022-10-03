@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateAuthDto } from './dto/create-auth.dto';
 import { UpdateAuthDto } from './dto/update-auth.dto';
 import { JwtService } from '@nestjs/jwt';
+import { Organization } from 'src/public/organization/entities/organization.entity';
 
 @Injectable()
 export class AuthService {
@@ -12,8 +13,16 @@ export class AuthService {
     })
   }
 
-  create(createAuthDto: CreateAuthDto) {
-    return `title - ${createAuthDto.title} with email - ${createAuthDto.email}`;
+  validateOrg(title: string, password: string, email: string){
+
+    
+    return true;
+  }
+
+  register(createAuthDto: CreateAuthDto) {
+  
+    
+    return `fsadfsadfd ${createAuthDto.email}`;
   }
 
 

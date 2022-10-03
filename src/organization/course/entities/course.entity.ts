@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Client } from "src/organization/client/entities/client.entity";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Course {
@@ -26,6 +27,7 @@ export class Course {
     @Column()
     timeDel:    Date
     
-    @Column()
-    clientId:   number
+    @ManyToOne(()=>Client)
+    @JoinColumn()
+    clientId:   Client
 }

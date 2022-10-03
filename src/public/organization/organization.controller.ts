@@ -7,17 +7,13 @@ import { UpdateOrganizationDto } from './dto/update-organization.dto';
 export class OrganizationController {
   constructor(private readonly organizationService: OrganizationService) {}
 
-  @Post()
-  create(@Body() createOrganizationDto: CreateOrganizationDto) {
-    return this.organizationService.create(createOrganizationDto);
-  }
 
-  @Get()
+  @Get("/orgs")
   findAll() {
     return this.organizationService.findAll();
   }
 
-  @Get(':id')
+  @Get('/orgs/:id')
   findOne(@Param('id') id: string) {
     return this.organizationService.findOne(+id);
   }

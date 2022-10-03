@@ -41,6 +41,7 @@ const {
 @Module({
   imports: [AuthModule, TypeOrmModule.forRoot({
     type: 'postgres',
+<<<<<<< HEAD
       host: 'localhost',
       port: Number(PORT_DB),
       username: USERNAME_DB,
@@ -48,6 +49,19 @@ const {
       database: DATABASE_NAME,
       entities,
       synchronize: true,
+=======
+    host: 'localhost',
+    port: 5432,
+    username: 'postgres',
+    password: 'postgres',
+    database: 'sweet_potato_db',
+    entities: [Organization, Theme, Payment, DeadLine, Session,
+    State, Client, Course, ActiveTest, ActiveCourse, 
+    Department, Group, File, FileInformation, PublicInfo, Test, 
+    TestResult, TestType, Question, QuestionResult,
+    QuestionType, InputType],
+    synchronize: true,
+>>>>>>> c40d4ec4383061476433efab7a035d08e4bef0ab
   }), OrganizationModule, ThemeModule, PaymentModule,
    DeadLineModule, SessionModule, StateModule, ClientModule, 
    CourseModule, CourseResultsModule, ActiveCourseModule, 

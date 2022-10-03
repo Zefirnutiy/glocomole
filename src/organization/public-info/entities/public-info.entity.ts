@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Client } from "src/organization/client/entities/client.entity";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class PublicInfo {
@@ -27,6 +28,7 @@ export class PublicInfo {
     @Column()
     timeDel:    Date
     
-    @Column()
-    clientId:   number
+    @OneToOne(()=>Client)
+    @JoinColumn()
+    clientId:   Client
 }

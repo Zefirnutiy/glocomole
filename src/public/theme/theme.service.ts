@@ -1,9 +1,13 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateThemeDto } from './dto/create-theme.dto';
 import { UpdateThemeDto } from './dto/update-theme.dto';
+import { Theme } from './entities/theme.entity';
 
 @Injectable()
 export class ThemeService {
+  constructor(@InjectRepository(Theme) private readonly orgRepository: Repository<Theme>){}
   create(createThemeDto: CreateThemeDto) {
     return 'This action adds a new theme';
   }

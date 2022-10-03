@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Organization } from "src/public/organization/entities/organization.entity";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Payment {
@@ -23,6 +24,7 @@ export class Payment {
     @Column()
     protectionCheating: boolean
     
-    @Column()
-    organizationId: number
+    @ManyToOne(()=>Organization)
+    @JoinColumn()
+    organizationId: Organization
 }
